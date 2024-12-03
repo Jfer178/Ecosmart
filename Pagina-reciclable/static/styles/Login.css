@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe600 0%, #f7e96c 100%);
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    background: rgba(247, 247, 247, 0.747);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 40px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.form-box {
+    position: relative;
+    width: 100%;
+}
+
+.form-box h2 {
+    color: #000000;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field input {
+    width: 100%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 15px 45px;
+    color: #000000;
+    font-size: 16px;
+}
+
+.input-field input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+}
+
+.input-field i:first-child {
+    left: 15px;
+}
+
+.input-field .toggle-password {
+    right: 15px;
+    cursor: pointer;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 30px;
+}
+
+.remember-forgot label {
+    color: #000000;
+    display: flex;
+    align-items: center;
+}
+
+.remember-forgot label input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.remember-forgot a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 50px;
+    background: #7cdd7c;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #075504;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: rgba(4, 150, 248, 0.9);
+    transform: translateY(-2px);
+}
+
+.social-text {
+    color: #000000;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #000000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.register-link {
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #0059fd;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Mensaje de notificación */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification.success {
+    background: #4CAF50;
+}
+
+.notification.error {
+    background: #f44336;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .input-field {
+        margin-bottom: 15px;
+    }
+    
+    .remember-forgot {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

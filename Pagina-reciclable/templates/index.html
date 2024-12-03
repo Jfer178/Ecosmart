@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/index.css">
+    <link rel="icon" href="/static/Imagenes/LogoMini (1).png">
+    <title>ECO SMART</title>
+    <script src="/static/logica/Pagina.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo"><img src="/static/Imagenes/LogoMini (1).png" alt="Logo"></a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="/static/Imagenes/menu.svg" class="menu-icono" alt="Menú">
+            </label>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="{{ url_for('index') }}">INICIO</a></li>
+                    <li><a href="#informacion">BENEFICIOS</a></li>
+                    <li><a href="#reciclar">RECICLAR</a></li>
+                    <li><a href="{{ url_for('problema') }}">PROBLEMA</a></li>
+                    <li><a href="{{ url_for('contacto') }}">CONTÁCTANOS</a></li>
+                  
+                </ul>
+            </nav>
+
+            <div class="socials-1">
+                <a href="#"><img src="/static/Imagenes/r1.svg" alt="Social 1"></a>
+                <a href="#"><img src="/static/Imagenes/r2.svg" alt="Social 2"></a>
+                <a href="#"><img src="/static/Imagenes/r3.svg" alt="Social 3"></a>
+
+                
+            </div>
+
+            {% if session.get('user_id') %}
+                <li><button id="logoutBtn" class="auth-btn">CERRAR SESIÓN</button></li>
+            {% else %}
+                <li><button onclick="window.location.href='{{ url_for('login') }}'" class="auth-btn">INICIAR SESIÓN</button></li>
+            {% endif %}
+
+        </div>
+
+        <div class="header-content container">
+            <div class="header-txt">
+                <section id="inicio" ><section>
+                <h1>RECICLAR ES SANAR</h1>
+                <p>
+                    Bienvenido a nuestra plataforma dedicada a mejorar las prácticas de reciclaje en nuestro país. Aquí
+                    encontrarás información práctica y recursos útiles para aprender a reciclar correctamente y
+                    contribuir al cuidado del medio ambiente. Nuestro objetivo es educar y fomentar una cultura de
+                    sostenibilidad, proporcionando herramientas, guías y puntos de recolección para que todos, desde
+                    hogares hasta empresas, puedan adoptar hábitos de reciclaje responsables y reducir su impacto
+                    ambiental.
+                </p>
+            </div>
+            <div class="header-img">
+                <video  controls width="700"> 
+                    <source src="/static/Imagenes/campaña-elijo-reciclar.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="reciclar" style="background-color: rgb(255, 255, 255);">
+        <div class="about-content container">
+            <img class="ab1" src="/static/Imagenes/ab1.png" alt="">
+            <img class="ab3" src="/static/Imagenes/ab3.png" alt="">
+
+            <div class="about-img">
+                <img src="/static/Imagenes/recycling-294079_640.webp" alt="">
+            </div>
+            <div class="about-txt">
+                <br>
+                <h2>¿Cómo Reciclar?</h2>
+                <p>Reciclar correctamente reduce el impacto ambiental y promueve una economía circular en la que los materiales vuelven a utilizarse.</p>
+
+                <ul>
+                    <li><strong>Plástico:</strong> Lava y seca botellas, tapas, y otros envases antes de depositarlos en el contenedor correspondiente.</li>
+                    <li><strong>Papel y Cartón:</strong> Asegúrate de que estén secos y libres de restos de comida. Pliega las cajas de cartón para ahorrar espacio.</li>
+                    <li><strong>Vidrio:</strong> Recicla botellas y frascos de vidrio, pero retira las tapas metálicas o de plástico.</li>
+                    <li><strong>Metales:</strong> Envases de aluminio, latas y otros metales reciclables deben estar limpios y sin residuos.</li>
+                </ul>
+            </div>
+        </div>
+<br>
+        <div>
+            <main class="contact container">
+                <h2>Formulario de Reciclaje</h2>
+                <button class="recilaje" onclick="window.location.href='{{ url_for('formulario') }}'">¡Conoce cómo Reciclar!</button>
+            </main>
+        </div>
+    </section>
+
+    <section id ="informacion" class="information" style="background-color: rgb(250, 250, 250);">
+
+        <div class="information-content container">
+            <img class="in1" src="/static/Imagenes/ab1.png" alt="">
+            <img class="in2" src="/static/Imagenes/ab2.png" alt="">
+                <img class="in3" src="/static/Imagenes/ab3.png" alt="">
+
+            <h2>Beneficios del Reciclaje</h2>
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <i class="benefit-icon">🌍</i>
+                    <h3>Impacto Ambiental</h3>
+                    <p>Reduce la huella de carbono y ayuda a combatir el cambio climático al disminuir las emisiones de gases de efecto invernadero.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="benefit-icon">💧</i>
+                    <h3>Ahorro de Recursos</h3>
+                    <p>Conserva agua, energía y materias primas al reutilizar materiales existentes en lugar de producir nuevos.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="benefit-icon">💼</i>
+                    <h3>Beneficio Económico</h3>
+                    <p>Genera empleos en el sector del reciclaje y permite obtener ingresos extra por la venta de materiales reciclables.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="benefit-icon">🌱</i>
+                    <h3>Futuro Sostenible</h3>
+                    <p>Preserva los recursos naturales para las futuras generaciones y reduce la necesidad de vertederos.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <i class="benefit-icon">🏭</i>
+                    <h3>Reducción de Contaminación</h3>
+                    <p>Disminuye la contaminación del aire y agua al reducir la necesidad de procesos industriales de producción primaria y la extracción de materias primas.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="benefit-icon">🤝</i>
+                    <h3>Impacto Social</h3>
+                    <p>Fomenta la conciencia ambiental en la comunidad y crea una cultura de responsabilidad social, mejorando la calidad de vida de todos.</p>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-number">75%</span>
+                        <p>de los residuos son reciclables, pero solo reciclamos el 20% a nivel mundial</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">17</span>
+                        <p>árboles salvados por tonelada de papel reciclado, equivalente a 32,000 hojas de papel</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">90%</span>
+                        <p>menos energía usando aluminio reciclado, ahorrando suficiente energía para alimentar 20 hogares por un año</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1000</span>
+                        <p>años tarda una botella de plástico en degradarse en la naturaleza</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">13%</span>
+                        <p>del plástico mundial se recicla, mientras que 8 millones de toneladas acaban en los océanos cada año</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">60%</span>
+                        <p>de reducción en emisiones de CO2 al reciclar vidrio en lugar de producir nuevo</p>
+                    </div>
+                </div>
+
+                <div class="eco-tips">
+                    <h3>Tips para Reciclar Mejor</h3>
+                    <ul class="tips-list">
+                        <li>Separa correctamente los materiales</li>
+                        <li>Limpia los envases antes de reciclarlos</li>
+                        <li>Aplasta las cajas y envases para ahorrar espacio</li>
+                        <li>Infórmate sobre los puntos de reciclaje cercanos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <main class="contact container">
+        <div class="contant-table">
+            <span>RESIDUOS FISICOS</span>
+            <h3>Tabla de infomracion</h3>
+
+            <table class="Residuos">
+                <tr>
+                    <th> Materiales</th>
+                    <th> VALOR </th>
+                    <th> VALOR gr</th>
+                </tr>
+                <tr>
+                    <td>Papel Carton</td>
+                    <td> $600 a $1,500</td>
+                    <td>COP/kg.</td>
+                </tr>
+                <tr>
+                    <td>Vidrio</td>
+                    <td>$300 a $500</td>
+                    <td>COP/kg.</td>
+                </tr>
+                <tr>
+                    <td>Plastico</td>
+                    <td> $2,500 a $4,000 </td>
+                    <td>COP/kg.</td>
+                </tr>
+                <tr>
+                    <td>Baterias</td>
+                    <td> $3,000 a $6,000</td>
+                    <td>COP/kg.</td>
+                </tr>
+                <tr>
+                    <td>Madera</td>
+                    <td>$500 a $1,500</td>
+                    <td>COP/kg.</td>
+                </tr>
+                <tr>
+                    <td>Cobre</td>
+                    <td>$20,000 a $25,000</td>
+                    <td>COP/kg.</td>
+                </tr>
+                <tr>
+                    <td>Dispositivos Electricos</td>
+                    <td>$1,000 a $4,000 </td>
+                    <td>COP/kg.</td>
+                </tr>
+                <tr>
+                    <td>Aluminio</td>
+                    <td> $5,000 a $7,000</td>
+                    <td>COP/kg.</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="form-content">
+
+            <h2>UNETE A LA COMUNIDAD</h2>
+            <button class="recilaje" onclick="window.location.href='{{ url_for('register') }}'">¡UNETE PARA RECICLAR!</button>
+
+        </div>
+
+        <div class="carrusel">
+            <div class="imagenes">
+                <img src="/static/Imagenes/basuras.jpg" alt="Imagen 1">
+                <img src="/static/Imagenes/carton.jpg" alt="Imagen 2">
+                <img src="/static/Imagenes/plastico.jpg" alt="Imagen 3">
+                <img src="/static/Imagenes/baterias.jpg" alt="Imagen 1">
+                <img src="/static/Imagenes/cobre.jpg" alt="Imagen 2">
+                <img src="/static/Imagenes/dispositivos.jpg" alt="Imagen 3">
+                <img src="/static/Imagenes/images.jpg" alt="Imagen 1">
+                <img src="/static/Imagenes/images (1).jpg" alt="Imagen 2">
+                <img src="/static/Imagenes/reciclaje.jpg" alt="Imagen 3">
+                
+
+
+
+              
+            </div>
+        </div>
+
+    </main>
+
+    
+
+                <div class="link-img">
+                    <img src="/static/Imagenes/LogoCompleto.png" alt="">
+                    <div class="socials-2">
+                        <a href="#"> <img src="/static/Imagenes/r1.svg" alt=""></a>
+                        <a href="#"> <img src="/static/Imagenes/r2.svg" alt=""></a>
+                        <a href="#"> <img src="/static/Imagenes/r3.svg" alt=""></a>
+                    </div>
+                </div>
+
+                  <section id ="contacto">
+                  <div class="link">
+                    <center>
+                    <h3>Miembros</h3>
+                        <ul>
+                            
+                             <li><a href="#">  David Escamilla - Desarrollador Frontend---Universidad libre</a></li>
+                             <li><a href="#">  Jeremy Fontalvo - Desarrollador Backend---Universidad libre</a></li>
+                             <li><a href="#">  Nadin Manzur - coordinadores y documentadores---Universidad libre</a></li>  
+                             <li><a href="#">  Marilis Londoño - coordinadores y documentadores---Universidad libre</a></li> 
+                            </center>
+                        <br>                      
+                         </ul>
+                   </div>
+            </section>
+
+               
+
+             <footer class="footer">
+             <div class="footer-copy">
+            
+                <p> <strong>UNIVERSIDAD LIBRE</strong></p>
+                <p> <strong>ECO SMART</strong></p>
+                <p> <strong>2024</strong></p>
+                <p> <strong>Todos los derechos reservados ©</strong></p>
+
+
+             </div>
+              </footer>
+
+</body>
+
+</html>

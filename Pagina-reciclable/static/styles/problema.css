@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+.header {
+    background: linear-gradient(180deg,
+            rgba(251, 205, 49, 1) 0%,
+            rgba(249, 195, 40, 1) 51%,
+            rgb(255, 177, 22) 100%);
+    min-height: 0vh;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.impact-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.impact-card {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.statistics {
+    background-color: #e53e3e;
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.solutions {
+    background-color: #38a169;
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: #ffae00;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

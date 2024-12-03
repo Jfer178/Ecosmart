@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reciclar - EcoRecicla</title>
+    <link rel="stylesheet" href="/static/styles/formulario.css">
+</head>
+<body>
+    <div class="container">
+        <h1>¡RECICLA Y GANA!</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>Precio por Kilo (USD)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Baterías</td>
+                    <td>$5000</td>
+                </tr>
+                <tr>
+                    <td>Cobre</td>
+                    <td>$23000</td>
+                </tr>
+                <tr>
+                    <td>Madera</td>
+                    <td>$1500</td>
+                </tr>
+                <tr>
+                    <td>Vidrio</td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td>Papel</td>
+                    <td>$1500</td>
+                </tr>
+                <tr>
+                    <td>Plástico</td>
+                    <td>$3500</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form id="reciclarForm">
+            <div class="grid">
+                <div>
+                    <label for="Baterías">Baterías (kg)</label>
+                    <input type="number" id="Baterías" min="0" />
+                </div>
+                <div>
+                    <label for="Cobre">Cobre (kg)</label>
+                    <input type="number" id="Cobre" min="0" />
+                </div>
+                <div>
+                    <label for="Madera">Madera (kg)</label>
+                    <input type="number" id="Madera" min="0" />
+                </div>
+                <div>
+                    <label for="Vidrio">Vidrio (kg)</label>
+                    <input type="number" id="Vidrio" min="0" />
+                </div>
+                <div>
+                    <label for="Papel">Papel (kg)</label>
+                    <input type="number" id="Papel" min="0" />
+                </div>
+                <div>
+                    <label for="Plástico">Plástico (kg)</label>
+                    <input type="number" id="Plástico" min="0" />
+                </div>
+            </div>
+            <div id="totalContainer">
+                Total a recibir: $<span id="total">0.00</span>
+            </div>
+            <div class="datos-recoleccion">
+                <h2>Datos para la recolección</h2>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" required />
+                </div>
+                <div>
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" required />
+                </div>
+                <div>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" required />
+                </div>
+                <div>
+                    <label for="fecha">Fecha de Recolección</label>
+                    <input type="date" id="fecha" placeholder="Seleccione una fecha" required />
+                </div>
+            </div>
+            <button type="submit">Solicitar Recolección</button>
+        </form>
+
+        <div id="ticketOverlay" class="ticket-overlay">
+            <div id="ticket" class="ticket">
+                <div class="ticket-header">
+                    <img src="/static/Imagenes/LogoMini (1).png" alt="Logo" class="ticket-logo">
+                    <h3>BOLETO DE RECICLAJE</h3>
+                    <span class="close-ticket">&times;</span>
+                </div>
+                <div class="ticket-content">
+                    <div class="ticket-info">
+                        <p><strong>Nombre:</strong> <span id="ticket-name"></span></p>
+                        <p><strong>Dirección:</strong> <span id="ticket-address"></span></p>
+                        <p><strong>Teléfono:</strong> <span id="ticket-phone"></span></p>
+                        <p><strong>Fecha de Recolección:</strong> <span id="ticket-pickup-date"></span></p>
+                        <p><strong>Matricula del Camión:</strong> <span> MND-123 CHEVROLET</span></p>
+                        <p>Código de recolecta: <span id="ticket-code"></span></p>
+                    </div>
+                    <div class="ticket-materials">
+                        <h4>Materiales Reciclados</h4>
+                        <table id="ticket-materials-table">
+                            <thead>
+                                <tr>
+                                    <th>Material</th>
+                                    <th>Cantidad (kg)</th>
+                                    <th>Precio/kg</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ticket-materials-body">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="ticket-total">
+                        <p><strong>Total a Recibir:</strong> $<span id="ticket-total"></span></p>
+                    </div>
+                    <div class="ticket-footer">
+                        <p>Fecha de emisión: <span id="ticket-date"></span></p>
+                        <p>Gracias por contribuir al medio ambiente</p>
+                        <p> Matricula del Camión:  MND-123 CHEVROLET </p>
+                        <div class="ticket-barcode">
+                            <!-- Simulación de código de barras -->
+                            ||||| |||| || ||||| || |||||
+                        </div>
+                    </div>
+
+                    <div class="return-button">
+                        <a href="/" class="btn-return">Volver al Inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/logica/formulario.js"></script>
+</body>
+</html>
+
+
+
